@@ -5,8 +5,8 @@ import 'package:notes_hub/constants.dart';
 
 Widget showAlertDialog(BuildContext context){
   return  AlertDialog(
-      title:const Text('NoteHub') ,
-      content: const Text('Add Your Daily Notes !'),
+      title:const Text('NoteHub',style: TextStyle(color: iconColor),) ,
+      content: const Text('Add Your Daily Notes !',style: TextStyle(color: iconColor)),
       backgroundColor:kPrimaryColor ,
       actions: [
         TextButton(

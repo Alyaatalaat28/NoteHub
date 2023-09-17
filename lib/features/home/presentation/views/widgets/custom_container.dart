@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes_hub/constants.dart';
 
-class ContainerItem extends StatelessWidget {
-  const ContainerItem({super.key, this.isSearch=true,this.onPressed });
+class CustomContainer extends StatelessWidget {
+  const CustomContainer({super.key, this.isSearch=true,this.onPressed });
   final bool isSearch;
   final void Function()? onPressed;
   @override

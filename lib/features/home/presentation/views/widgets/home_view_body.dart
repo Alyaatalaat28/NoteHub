@@ -8,15 +8,15 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  const Padding(
       padding: EdgeInsets.symmetric(vertical: 50.0,horizontal: 25.0),
       child: Column(
         children:[
         CustomAppBar(),
-        Image(
-          image: AssetImage('assets/images/Notebook-amico.png'),
-          height:287,
-          width:350,
+        Expanded(
+          child: Image(
+            image: AssetImage('assets/images/Notebook-amico.png'),
+          ),
         ),
         Text('Create your first note !',
         style: TextStyle(
