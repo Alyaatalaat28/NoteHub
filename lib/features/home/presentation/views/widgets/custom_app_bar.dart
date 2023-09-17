@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
-import '../../features/home/presentation/views/widgets/custom_container.dart';
-import '../../features/search/presentation/views/search_view.dart';
-import 'alert_dialog.dart';
+import '../../../../../constants.dart';
+import 'custom_container.dart';
+import '../../../../search/presentation/views/search_view.dart';
+import '../../../../../core/widgets/alert_dialog.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -23,12 +23,15 @@ class CustomAppBar extends StatelessWidget {
         const Spacer(),
          CustomContainer(
           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchView())),
-        ),
+           icon:const Icon(Icons.search),
+          ) ,
         const SizedBox(width:21,),
-        CustomContainer(isSearch: false,
+        CustomContainer(
         onPressed: () => showDialog(
           context: context,
-           builder: (context) =>showAlertDialog(context) ,),),
+           builder: (context) =>showAlertDialog(context) ,),
+           icon:const Icon(Icons.info_outline),
+           ),
       ],
     );
   }

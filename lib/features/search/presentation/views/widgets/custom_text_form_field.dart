@@ -13,12 +13,21 @@ class CustomTextFormField extends StatelessWidget {
       controller:notesController ,
       keyboardType:TextInputType.text,
       cursorColor:iconColor ,
-      decoration:const InputDecoration(
+      decoration: InputDecoration(
         hintText: 'Search by the keyword...',
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
-        )
+        hintStyle: TextStyle(
+          color: hintText.withOpacity(0.5),),
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
       ),
+    );
+  }
+  OutlineInputBorder buildOutlineInputBorder() {
+    return OutlineInputBorder(
+      borderSide: const BorderSide(
+        color: kContainerColor,
+      ),
+      borderRadius: BorderRadius.circular(30.0),
     );
   }
 }

@@ -1,9 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:notes_hub/constants.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, this.isSearch=true,this.onPressed });
-  final bool isSearch;
+   CustomContainer({super.key,required this.icon ,this.onPressed });
+  Widget icon;
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,11 @@ class CustomContainer extends StatelessWidget {
         color: kContainerColor,
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
-      child: IconButton(
-        onPressed:onPressed,
-       icon:Icon(isSearch?Icons.search:Icons.info_outline,
-       color: iconColor,
-       )),
+       child: IconButton(
+         onPressed:onPressed,
+         icon:icon,
+         color: iconColor,
+       )
     );
   }
 }
