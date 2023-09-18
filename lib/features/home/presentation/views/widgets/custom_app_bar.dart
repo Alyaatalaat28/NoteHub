@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
 import 'custom_container.dart';
-import '../../../../search/presentation/views/search_view.dart';
-import '../../../../../core/widgets/alert_dialog.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -22,15 +20,11 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
          CustomContainer(
-          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchView())),
-           icon:const Icon(Icons.search),
+           icon:const Icon(Icons.dark_mode_outlined,color: iconColor),
           ) ,
         const SizedBox(width:21,),
         CustomContainer(
-        onPressed: () => showDialog(
-          context: context,
-           builder: (context) =>showAlertDialog(context) ,),
-           icon:const Icon(Icons.info_outline),
+           icon:const Icon(Icons.language,color: iconColor),
            ),
       ],
     );

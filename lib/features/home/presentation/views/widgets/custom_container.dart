@@ -19,7 +19,6 @@ class CustomContainer extends StatelessWidget {
        child: IconButton(
          onPressed:onPressed,
          icon:icon,
-         color: iconColor,
        )
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../home/presentation/views/widgets/custom_container.dart';
+import 'editor_alert_dialog.dart';
 
 class CustomNoteAppBar extends StatelessWidget {
   const CustomNoteAppBar({super.key});
@@ -12,7 +13,7 @@ class CustomNoteAppBar extends StatelessWidget {
         CustomContainer(
           icon:const Icon(Icons.arrow_back_ios_new) ,
           onPressed: () {
-            Navigator.pop(context);
+            showDialog(context: context, builder: (context) => EditorAlertDialog(context));
            },
         ),
         const Spacer(),
