@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         Text('Create your first note !',
         style: TextStyle(
-          color: iconColor,
+          color: wColor,
         ),),
         ]
       ),

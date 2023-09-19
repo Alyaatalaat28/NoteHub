@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_hub/features/preview/presentation/views/preview_view.dart';
 
 import '../../../../home/presentation/views/widgets/custom_container.dart';
 import 'editor_alert_dialog.dart';
@@ -19,7 +20,9 @@ class CustomNoteAppBar extends StatelessWidget {
         const Spacer(),
         CustomContainer(
           icon:const Icon(Icons.remove_red_eye_outlined) ,
-          onPressed: (){},
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>const PreviewView()));
+          },
         ),
         const SizedBox(width:21,),
         CustomContainer(

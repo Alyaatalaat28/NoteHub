@@ -20,7 +20,7 @@ class SearchViewBody extends StatelessWidget {
           ),
           const Text('File not found. Try searching again.',
           style: TextStyle(
-            color: iconColor,
+            color: wColor,
           ),),
         ],
       ),

@@ -8,11 +8,11 @@ import 'package:notes_hub/constants.dart';
 Widget EditorAlertDialog(BuildContext context){
   return  AlertDialog(
       title:const Icon(Icons.info_outline,
-      color: iconColor,
+      color: wColor,
       ) ,
       content: const Text('Save Changes ?',
       textAlign: TextAlign.center,
-      style: TextStyle(color: iconColor)),
+      style: TextStyle(color: wColor)),
       backgroundColor:kPrimaryColor ,
       actions: [
         Row(
@@ -28,7 +28,7 @@ Widget EditorAlertDialog(BuildContext context){
            },
             child: const Text('Discard',
             style: TextStyle(
-             color: iconColor,
+             color: wColor,
             ),
             )),
        ), 
@@ -42,7 +42,7 @@ Widget EditorAlertDialog(BuildContext context){
             },
              child: const Text('Save',
               style: TextStyle(
-              color: iconColor,
+              color: wColor,
              ),
              )),
           ),

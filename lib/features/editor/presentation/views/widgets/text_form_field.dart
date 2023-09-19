@@ -16,7 +16,7 @@ class NoteTextFormFields extends StatelessWidget {
         children: [
           TextFormField(
             controller: titleController,
-            cursorColor:iconColor ,
+            cursorColor:wColor ,
             keyboardType: TextInputType.text,
             decoration:  InputDecoration(
               hintText: 'Title',
@@ -31,7 +31,7 @@ class NoteTextFormFields extends StatelessWidget {
           TextFormField(
             controller: texteController,
             keyboardType: TextInputType.text,
-            cursorColor:iconColor ,
+            cursorColor:wColor ,
               decoration:  InputDecoration(
               hintText: 'Type something...',
               hintStyle: TextStyle(

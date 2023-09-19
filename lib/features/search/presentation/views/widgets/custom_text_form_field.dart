@@ -12,7 +12,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       controller:notesController ,
       keyboardType:TextInputType.text,
-      cursorColor:iconColor ,
+      cursorColor:wColor ,
       decoration: InputDecoration(
         hintText: 'Search by the keyword...',
         hintStyle: TextStyle(

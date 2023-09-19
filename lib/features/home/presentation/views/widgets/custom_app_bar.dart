@@ -16,21 +16,21 @@ class CustomAppBar extends StatelessWidget {
           style: TextStyle(
             fontSize: 43,
             fontWeight: FontWeight.w600,
-            color:iconColor,
+            color:wColor,
           ),
         ),
         const Spacer(),
         CustomContainer(
-           icon:const Icon(Icons.search,color: iconColor),
+           icon:const Icon(Icons.search,color: wColor),
            onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchView())),
           ) ,
         const SizedBox(width:21,),
          CustomContainer(
-           icon:const Icon(Icons.dark_mode_outlined,color: iconColor),
+           icon:const Icon(Icons.dark_mode_outlined,color: wColor),
           ) ,
         const SizedBox(width:21,),
         CustomContainer(
-           icon:const Icon(Icons.language,color: iconColor),
+           icon:const Icon(Icons.language,color: wColor),
            ),
       ],
     );
