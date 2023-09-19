@@ -5,7 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:notes_hub/constants.dart';
 
-Widget EditorAlertDialog(BuildContext context){
+import '../../../../home/presentation/views/home_view.dart';
+
+Widget EditorAlertDialog(context){
   return  AlertDialog(
       title:const Icon(Icons.info_outline,
       color: wColor,
@@ -24,7 +26,7 @@ Widget EditorAlertDialog(BuildContext context){
          height: 30,
          child: TextButton(
            onPressed: (){
-             Navigator.pop(context);
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeView()));
            },
             child: const Text('Discard',
             style: TextStyle(
@@ -38,7 +40,7 @@ Widget EditorAlertDialog(BuildContext context){
           height: 30,
             child: TextButton(
             onPressed: (){
-              Navigator.pop(context);
+
             },
              child: const Text('Save',
               style: TextStyle(

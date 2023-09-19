@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, deprecated_member_use
 
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class NoteTextFormFields extends StatelessWidget {
             keyboardType: TextInputType.text,
             decoration:  InputDecoration(
               hintText: 'Title',
-              hintStyle: TextStyle(
+              hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
                 fontSize: 48,
                 color:hintText.withOpacity(0.5) ,
               ),
@@ -34,7 +34,7 @@ class NoteTextFormFields extends StatelessWidget {
             cursorColor:wColor ,
               decoration:  InputDecoration(
               hintText: 'Type something...',
-              hintStyle: TextStyle(
+              hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
                 color: hintText.withOpacity(0.5),
               ),
               border: InputBorder.none,

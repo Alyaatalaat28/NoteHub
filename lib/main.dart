@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_hub/core/utils/bloc_observer.dart';
-
-import 'constants.dart';
 import 'core/manager/cubit/note_cubit_cubit.dart';
+import 'core/theme.dart';
 import 'features/home/presentation/views/home_view.dart';
 
 void main() {
@@ -24,9 +23,9 @@ class MyApp extends StatelessWidget {
         builder:(context,state) {
           return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            scaffoldBackgroundColor: kPrimaryColor,
-          ),
+          theme:lightTheme ,
+          darkTheme:darkTheme ,
+          themeMode:NoteCubitCubit.get(context).isDark?ThemeMode.dark:ThemeMode.light,
           home:const HomeView(),
         );
         },

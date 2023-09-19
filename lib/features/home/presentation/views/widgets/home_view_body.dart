@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: deprecated_member_use
 
-import '../../../../../constants.dart';
+import 'package:flutter/material.dart';
 import 'custom_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -8,20 +8,18 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
-      padding: EdgeInsets.symmetric(vertical: 50.0,horizontal: 25.0),
+    return   Padding(
+      padding: const EdgeInsets.symmetric(vertical: 50.0,horizontal: 25.0),
       child: Column(
         children:[
-        CustomAppBar(),
-        Expanded(
+        const CustomAppBar(),
+        const Expanded(
           child: Image(
             image: AssetImage('assets/images/Notebook-amico.png'),
           ),
         ),
         Text('Create your first note !',
-        style: TextStyle(
-          color: wColor,
-        ),),
+        style: Theme.of(context).textTheme.bodyText1!,),
         ]
       ),
     );

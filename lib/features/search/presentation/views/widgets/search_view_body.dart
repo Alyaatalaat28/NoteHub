@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: deprecated_member_use
 
-import '../../../../../constants.dart';
+import 'package:flutter/material.dart';
 import 'custom_text_form_field.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -18,10 +18,8 @@ class SearchViewBody extends StatelessWidget {
               image: AssetImage('assets/images/File searching-cuate.png'),    
             ),
           ),
-          const Text('File not found. Try searching again.',
-          style: TextStyle(
-            color: wColor,
-          ),),
+           Text('File not found. Try searching again.',
+          style:Theme.of(context).textTheme.bodyText1!,),
         ],
       ),
     );

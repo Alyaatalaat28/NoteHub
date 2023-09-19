@@ -66,6 +66,11 @@ void readData(){
   });
 }
 
+bool isDark=false;
 
+void appMode(){
+  isDark=!isDark;
+  emit(ChangeAppModeState());
+}
 
 }

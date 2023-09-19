@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, deprecated_member_use
 
 import 'package:flutter/material.dart';
 
@@ -15,8 +15,8 @@ class CustomTextFormField extends StatelessWidget {
       cursorColor:wColor ,
       decoration: InputDecoration(
         hintText: 'Search by the keyword...',
-        hintStyle: TextStyle(
-          color: hintText.withOpacity(0.5),),
+        hintStyle: Theme.of(context).textTheme.bodyText1!.copyWith(
+        color: hintText.withOpacity(0.5),),
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
       ),

@@ -57,5 +57,8 @@ final class  NoteCubitUpdateErrorState extends NoteCubitState {
   NoteCubitUpdateErrorState(this.error);
 }
 
+// app mode
+final class ChangeAppModeState extends NoteCubitState {}
+
 
 

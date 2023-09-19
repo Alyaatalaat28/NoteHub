@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:notes_hub/core/manager/cubit/note_cubit_cubit.dart';
 
 import '../../../../../constants.dart';
 import '../../../../search/presentation/views/search_view.dart';
@@ -11,12 +14,11 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        const Text(
+         Text(
           'Notes',
-          style: TextStyle(
+          style:Theme.of(context).textTheme.bodyText1!.copyWith (
             fontSize: 43,
             fontWeight: FontWeight.w600,
-            color:wColor,
           ),
         ),
         const Spacer(),
@@ -26,6 +28,9 @@ class CustomAppBar extends StatelessWidget {
           ) ,
         const SizedBox(width:21,),
          CustomContainer(
+          onPressed: (){
+            NoteCubitCubit.get(context).appMode();
+          },
            icon:const Icon(Icons.dark_mode_outlined,color: wColor),
           ) ,
         const SizedBox(width:21,),
