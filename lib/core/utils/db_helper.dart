@@ -7,7 +7,7 @@ import 'package:path/path.dart';
 class DbHelper{
   static Database? _db;
 
-Future<Database?> get db async{
+static Future<Database?> get db async{
   if(_db==null){
     _db=await initialDb();
     return _db;
@@ -18,7 +18,7 @@ Future<Database?> get db async{
   }
 
 // initialize database
-initialDb()async{
+static initialDb()async{
   String databasePath=await getDatabasesPath();
   String path=join(databasePath,'alyaa.db');
   Database mydb=await openDatabase(path,onCreate: _onCreate);
@@ -26,12 +26,12 @@ initialDb()async{
 }
 
   // create database
-  FutureOr<void> _onCreate(Database db, int version) async{
+  static FutureOr<void> _onCreate(Database db, int version) async{
     await db.execute('''
     CREATE TABLE "notes"(
       "id" INTEGER AUTOINCREMENT NOT NULL PRIMARY KEY,
-      "title" TEXT NOT NULL,
       "note" TEXT NOT NULL
+      "title" TEXT NOT NULL,
     )
 ''' 
     );
@@ -39,28 +39,28 @@ initialDb()async{
   }
 
 // read database
-readData(String sql)async{
+static Future<List<Map>> readData(String sql)async{
   Database? mydb=await db;
   List<Map> response=await mydb!.rawQuery(sql);
   return response;
 }
 
 // insert database
-insertData(String sql)async{
+static Future<int> insertData(String sql)async{
   Database? mydb=await db;
   int response=await mydb!.rawInsert(sql);
   return response;
 }
 
 // update database
-updateData(String sql)async{
+static Future<int> updateData(String sql)async{
   Database? mydb=await db;
   int response=await mydb!.rawUpdate(sql);
   return response;
 }
 
 // delete database
-deleteData(String sql)async{
+static Future<int> deleteData(String sql)async{
   Database? mydb=await db;
   int response=await mydb!.rawDelete(sql);
   return response;

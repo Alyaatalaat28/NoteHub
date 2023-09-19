@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
+import '../../../../search/presentation/views/search_view.dart';
 import 'custom_container.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -19,6 +20,11 @@ class CustomAppBar extends StatelessWidget {
           ),
         ),
         const Spacer(),
+        CustomContainer(
+           icon:const Icon(Icons.search,color: iconColor),
+           onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchView())),
+          ) ,
+        const SizedBox(width:21,),
          CustomContainer(
            icon:const Icon(Icons.dark_mode_outlined,color: iconColor),
           ) ,
