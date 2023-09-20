@@ -1,16 +1,3 @@
 # notes_hub
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+NoteHub is an innovative Flutter project that combines the power of sqflite for local database storage, the BLoC pattern and MVVM architecture With localization support, offering a seamless multi-language experience, Additionally dark mode, providing users with the flexibility to choose their preferred viewing mode.
