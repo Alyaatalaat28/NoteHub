@@ -1,0 +1,9 @@
+{
+  "title" :"Notes" ,
+  "text"  :"Create Your First Note !",
+  "formt" :"Title",
+  "content":"Type Something...",
+  "changes":"Save Changes?",
+  "yes":"Save",
+  "no":"Discard"
+}

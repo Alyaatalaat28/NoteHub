@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_hub/core/manager/cubit/note_cubit_cubit.dart';
 
 import '../../../../../constants.dart';
-import '../../../../search/presentation/views/search_view.dart';
+import '../../../../../generated/l10n.dart';
 import 'custom_container.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -15,18 +15,13 @@ class CustomAppBar extends StatelessWidget {
     return  Row(
       children: [
          Text(
-          'Notes',
+          S.of(context).title,
           style:Theme.of(context).textTheme.bodyText1!.copyWith (
             fontSize: 43,
             fontWeight: FontWeight.w600,
           ),
         ),
         const Spacer(),
-        CustomContainer(
-           icon:const Icon(Icons.search,color: wColor),
-           onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchView())),
-          ) ,
-        const SizedBox(width:21,),
          CustomContainer(
           onPressed: (){
             NoteCubitCubit.get(context).appMode();
@@ -35,6 +30,7 @@ class CustomAppBar extends StatelessWidget {
           ) ,
         const SizedBox(width:21,),
         CustomContainer(
+           onPressed:()=>NoteCubitCubit.get(context).appLocalization(),
            icon:const Icon(Icons.language,color: wColor),
            ),
       ],

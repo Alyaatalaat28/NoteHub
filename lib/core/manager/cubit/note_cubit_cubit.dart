@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,21 +11,22 @@ class NoteCubitCubit extends Cubit<NoteCubitState> {
  static NoteCubitCubit get(context)=>BlocProvider.of(context);
   
 // insert
-void insertData(String note,String title){
+void insertDataToDb(String note, String title) async {
   emit(NoteCubitInsertLoadingState());
-   DbHelper.insertData(
-    '''
-    INSERT INTO notes ('note','title')
-    VALUES ("$note","$title")
-    '''
-  ).then((value) {
+  try {
+    int value = await DbHelper.insertData(
+      '''
+      INSERT INTO notes ('note','title')
+      VALUES ("$note","$title")
+      '''
+    );
     emit(NoteCubitInsertSuccessState(value));
-  }).
-  catchError((error){
+  } catch (error) {
     emit(NoteCubitInsertErrorState(error.toString()));
-  });
- 
+    print(error.toString());
+  }
 }
+
 //update
 void updateData(String note,String title,int id){
  emit(NoteCubitUpdateLoadingState());
@@ -71,6 +74,13 @@ bool isDark=false;
 void appMode(){
   isDark=!isDark;
   emit(ChangeAppModeState());
+}
+
+bool isEn=true;
+
+void appLocalization(){
+  isEn=!isEn;
+  emit(ChangeAppLocalState());
 }
 
 }

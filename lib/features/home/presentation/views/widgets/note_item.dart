@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget noteItem(String title,Color color){  
+import '../../../../../core/manager/cubit/note_cubit_cubit.dart';
+
+Widget noteItem(String title,String note,int id,Color color,context){  
   return Dismissible(
     key: Key(title),
     direction: DismissDirection.horizontal,
@@ -38,9 +40,9 @@ Widget noteItem(String title,Color color){
     ),
     onDismissed: (direction){
       if(direction==DismissDirection.endToStart){
-        //delete
+        NoteCubitCubit.get(context).deleteData(id);
       }else if(direction==DismissDirection.startToEnd){
-        //edit
+         NoteCubitCubit.get(context).updateData(note, title, id);
       }
     },
   );

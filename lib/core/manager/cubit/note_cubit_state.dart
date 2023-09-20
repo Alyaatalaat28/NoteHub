@@ -60,5 +60,8 @@ final class  NoteCubitUpdateErrorState extends NoteCubitState {
 // app mode
 final class ChangeAppModeState extends NoteCubitState {}
 
+// app language
+final class ChangeAppLocalState extends NoteCubitState {}
+
 
 

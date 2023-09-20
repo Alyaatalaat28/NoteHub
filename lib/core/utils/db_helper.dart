@@ -21,17 +21,17 @@ static Future<Database?> get db async{
 static initialDb()async{
   String databasePath=await getDatabasesPath();
   String path=join(databasePath,'alyaa.db');
-  Database mydb=await openDatabase(path,onCreate: _onCreate);
+  Database mydb=await openDatabase(path,version:1 ,onCreate: _onCreate);
   return mydb;
 }
 
   // create database
-  static FutureOr<void> _onCreate(Database db, int version) async{
+  static _onCreate(Database db, int version) async{
     await db.execute('''
-    CREATE TABLE "notes"(
-      "id" INTEGER AUTOINCREMENT NOT NULL PRIMARY KEY,
-      "note" TEXT NOT NULL
-      "title" TEXT NOT NULL,
+    CREATE TABLE notes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      note TEXT NOT NULL,
+      title TEXT NOT NULL
     )
 ''' 
     );
@@ -46,7 +46,7 @@ static Future<List<Map>> readData(String sql)async{
 }
 
 // insert database
-static Future<int> insertData(String sql)async{
+static  insertData(String sql)async{
   Database? mydb=await db;
   int response=await mydb!.rawInsert(sql);
   return response;

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../home/presentation/views/widgets/custom_container.dart';
 
-class PreviewAppBar extends StatelessWidget {
-  const PreviewAppBar({super.key});
+class NotesAppBar extends StatelessWidget {
+  const NotesAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,10 @@ class PreviewAppBar extends StatelessWidget {
             Navigator.pop(context);
           } ,
         ),
+        const Spacer(),
+        CustomContainer(
+          icon:const Icon(Icons.edit,
+          color: wColor) ),
       ],
     );
   }

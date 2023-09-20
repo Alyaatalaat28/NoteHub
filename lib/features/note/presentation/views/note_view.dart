@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_hub/features/preview/presentation/views/widgets/preview_app_bar.dart';
 import '../../../../core/manager/cubit/note_cubit_cubit.dart';
 
-class PreviewView extends StatelessWidget {
-  const PreviewView({super.key,required this.text,required this.title});
+class NotesView extends StatelessWidget {
+  const NotesView({super.key,required this.text,required this.title});
   final String text;
   final String title;
   @override
@@ -20,7 +20,6 @@ class PreviewView extends StatelessWidget {
       padding:const EdgeInsets.symmetric(vertical: 50.0,horizontal: 25.0),
       child: SingleChildScrollView(
         child: Column(
-           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const PreviewAppBar(),
             const SizedBox(height: 42,),
@@ -29,8 +28,9 @@ class PreviewView extends StatelessWidget {
           fontSize:35 ,
         ),),
         const SizedBox(height: 37.0,),
-        Text(text,
-        textAlign:TextAlign.start ,
+        Text('''
+               $text
+        ''',
         style: Theme.of(context).textTheme.bodyText1!.copyWith(
           fontSize:23 ,
         ),),
