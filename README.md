@@ -12,4 +12,3 @@ NoteHub is an innovative Flutter project that combines the power of sqflite for 
 ![PhotoGrid_1695321883227](https://github.com/Alyaatalaat28/NoteHub/assets/78979377/c6edf3aa-6289-40c3-8d08-ce3e664f3139)
 ![PhotoGrid_1695321908654](https://github.com/Alyaatalaat28/NoteHub/assets/78979377/6ecc5bb0-3616-48d6-ba62-933333b2376e)
 ![PhotoGrid_1695242965328](https://github.com/Alyaatalaat28/NoteHub/assets/78979377/4f824ae3-2318-4e4d-adb2-4543d8b962bf)
-![PhotoGrid_1695242965328](https://github.com/Alyaatalaat28/NoteHub/assets/78979377/7e1c338c-5fba-4e7d-90dc-a459ba96aa0b)
