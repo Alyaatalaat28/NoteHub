@@ -58,17 +58,25 @@ void deleteData(int id){
   });
 }
 //read
+List<Map<dynamic,dynamic>> data=[];
+
 void readData(){
   emit(NoteCubitReadLoadingState());
   DbHelper.readData("SELECT * FROM notes").
   then((value) {
+    data.addAll(value);
     emit(NoteCubitReadDataSuccessState(value));
+    print(data);
   }).
   catchError((error){
     emit(NoteCubitReadDataErrorState(error.toString()));
+    print(error.toString());
   });
 }
 
+
+
+//app mode
 bool isDark=false;
 
 void appMode(){
@@ -76,6 +84,8 @@ void appMode(){
   emit(ChangeAppModeState());
 }
 
+
+//app localization
 bool isEn=true;
 
 void appLocalization(){

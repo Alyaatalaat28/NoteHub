@@ -23,7 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changes": MessageLookupByLibrary.simpleMessage("حفظ التغيرات ؟"),
-        "content": MessageLookupByLibrary.simpleMessage("...قم بكتابه ملاحظتك"),
+        "content": MessageLookupByLibrary.simpleMessage("قم بكتابه ملاحظتك"),
         "formt": MessageLookupByLibrary.simpleMessage("العنوان"),
         "no": MessageLookupByLibrary.simpleMessage("تجاهل"),
         "text": MessageLookupByLibrary.simpleMessage("قم بكتابه أول ملاحظه لك"),
