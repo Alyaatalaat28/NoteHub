@@ -28,9 +28,7 @@ class NotesView extends StatelessWidget {
           fontSize:35 ,
         ),),
         const SizedBox(height: 37.0,),
-        Text('''
-               $text
-        ''',
+        Text(text,
         style: Theme.of(context).textTheme.bodyText1!.copyWith(
           fontSize:23 ,
         ),),

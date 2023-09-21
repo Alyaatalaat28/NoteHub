@@ -9,15 +9,14 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-         padding: EdgeInsets.symmetric(vertical: 50.0,horizontal: 25.0),
-         child: Column(
-         children:[
-        CustomAppBar(),
-        NotesListView(),
-        
-        ]
-      ),
+    return const CustomScrollView(
+     physics: BouncingScrollPhysics(),
+     slivers: [ 
+       SliverToBoxAdapter(
+            child:  CustomAppBar(),),
+         SliverFillRemaining(
+           child: NotesListView()),
+          ],
     );
   }
 }

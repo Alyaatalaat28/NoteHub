@@ -15,23 +15,32 @@ class NotesListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<NoteCubitCubit, NoteCubitState>(
       listener: (context, state) {
-      },
+          
+        },
       builder: (context, state) {
         var data=NoteCubitCubit.get(context).data;
         if(data.isNotEmpty) {
           return ListView.builder(
-            itemBuilder:(context,index) =>noteItem(data[index]['title'],data[index]['note'],data[index]['id'],generateColor(),context),
+            physics: const BouncingScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder:(context,index) =>Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: noteItem(data[index]['title'],data[index]['note'],data[index]['id'],generateColor(),context),
+            ),
             itemCount:NoteCubitCubit.get(context).data.length ,
             );
         }
+        else if(data.isEmpty) {
           return  Column(
+            mainAxisSize: MainAxisSize.min,
           children: [
-            const Expanded(
+            const Flexible(
+              fit: FlexFit.loose,
               child: Image(
                 image: AssetImage('assets/images/Notebook-amico.png'),
               ),
             ),
-        
+        const Spacer(),
         Text(S.of(context).text,
         style: Theme.of(context).textTheme.bodyText1!.copyWith(
           fontSize: 20.0,
@@ -39,6 +48,8 @@ class NotesListView extends StatelessWidget {
         const SizedBox(height: 10,),
           ]);
         }
-    );
+        return const Center(child: CircularProgressIndicator(),);
+        }
+   );
   }
 }

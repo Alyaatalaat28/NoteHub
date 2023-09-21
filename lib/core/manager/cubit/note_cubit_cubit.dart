@@ -21,6 +21,11 @@ void insertDataToDb(String note, String title) async {
       '''
     );
     emit(NoteCubitInsertSuccessState(value));
+    data.add({
+      'note': note,
+      'title': title,
+      'id': value, // Assuming 'id' is the primary key of the note
+    });
   } catch (error) {
     emit(NoteCubitInsertErrorState(error.toString()));
     print(error.toString());
@@ -38,23 +43,31 @@ WHERE id = $id
 '''
 ).
   then((value) {
+    int index = data.indexWhere((note) => note['id'] == id);
+    if (index != -1) {
+      data[index]['note'] = note;
+      data[index]['title'] = title;
+    }
     emit(NoteCubitUpdateSuccessState(value));
   }).
   catchError((error){
      emit(NoteCubitUpdateErrorState(error.toString()));
+     print(error.toString());
   });
 }
 //delete
 void deleteData(int id){
   emit(NoteCubitDeleteLoadingState());
   DbHelper.deleteData('''
-"DELETE FROM notes WHERE id =$id"
+   DELETE FROM notes WHERE id =$id
 ''').
   then((value) {
+     data.removeWhere((note) => note['id'] == id);
     emit(NoteCubitDeleteSuccessState(value));
   }).
   catchError((error){
     emit(NoteCubitDeleteErrorState(error.toString()));
+    print(error.toString());
   });
 }
 //read

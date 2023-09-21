@@ -12,28 +12,31 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
-      children: [
-         Text(
-          S.of(context).title,
-          style:Theme.of(context).textTheme.bodyText1!.copyWith (
-            fontSize: 43,
-            fontWeight: FontWeight.w600,
+    return  Padding(
+      padding: const EdgeInsets.only(bottom:10.0),
+      child: Row(
+        children: [
+           Text(
+            S.of(context).title,
+            style:Theme.of(context).textTheme.bodyText1!.copyWith (
+              fontSize: 43,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-        const Spacer(),
-         CustomContainer(
-          onPressed: (){
-            NoteCubitCubit.get(context).appMode();
-          },
-           icon:const Icon(Icons.dark_mode_outlined,color: wColor),
-          ) ,
-        const SizedBox(width:21,),
-        CustomContainer(
-           onPressed:()=>NoteCubitCubit.get(context).appLocalization(),
-           icon:const Icon(Icons.language,color: wColor),
-           ),
-      ],
+          const Spacer(),
+           CustomContainer(
+            onPressed: (){
+              NoteCubitCubit.get(context).appMode();
+            },
+             icon:const Icon(Icons.dark_mode_outlined,color: wColor),
+            ) ,
+          const SizedBox(width:21,),
+          CustomContainer(
+             onPressed:()=>NoteCubitCubit.get(context).appLocalization(),
+             icon:const Icon(Icons.language,color: wColor),
+             ),
+        ],
+      ),
     );
   }
 }

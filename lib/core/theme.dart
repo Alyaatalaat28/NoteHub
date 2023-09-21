@@ -9,7 +9,11 @@ ThemeData lightTheme =ThemeData(
    textTheme: const TextTheme(
     bodyText1: TextStyle(
        color:kPrimaryColor,
-    ),)
+    ),),
+    appBarTheme: const AppBarTheme(
+      color: wColor,
+      elevation: 0.0,
+    ),
 );
 
 ThemeData darkTheme =ThemeData(
@@ -19,4 +23,8 @@ ThemeData darkTheme =ThemeData(
        color:wColor,
     ),
   ),
+      appBarTheme: const AppBarTheme(
+      color: kPrimaryColor,
+      elevation: 0.0,
+      )
 );
